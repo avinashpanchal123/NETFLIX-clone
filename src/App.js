@@ -1,11 +1,22 @@
 import React from 'react'
+import Row from './components/Row'
+import requests from './request'
 
 function app() {
+  let {fetchTrending,
+    fetchNetflixOriginals,
+    fetchTopRated,
+    fetchActionMovies,
+    fetchComedyMovies,
+    fetchHorrorMovies,
+    fetchRomanceMovies,
+    fetchDocumentaries
+  } = requests;
+
   return (
     <>
-    <h1>
-        hello I am app
-    </h1>
+    <Row title = "NETFLIX ORIGINALS" fetchURL={fetchNetflixOriginals} />
+    <Row title = "Trending Now" fetchURL={fetchTrending} />
     </>
   )
 }
