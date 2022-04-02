@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "../axios.js";
 import "./styles/Row.css"
 
+
+
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row = ({ title, fetchURL }) => {
+const Row = ({ title, fetchURL, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
 
      useEffect(()=>{
@@ -18,7 +20,7 @@ const Row = ({ title, fetchURL }) => {
           fetchData()
      },[fetchURL])
 
-  let key = 0;
+
   return (
     <>
       <div className="row">
@@ -26,9 +28,9 @@ const Row = ({ title, fetchURL }) => {
         <div className="row_posters_container">
           {movies.map((movie) => (
             <img
-              className="row_poster"
-              key={key++}
-              src={`${base_url}${movie.poster_path}`}
+              className={`row_poster ${isLargeRow && "large_poster"}`}
+              key={movie.id}
+              src={`${base_url}${isLargeRow ? movie.poster_path :movie.backdrop_path}`}
               alt={movie.title}
             />
           ))}
