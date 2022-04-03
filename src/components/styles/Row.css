@@ -1,6 +1,7 @@
 
 .row{
     margin-left: 1rem;
+    color: white;
 }
 
 .row_posters_container{
@@ -19,7 +20,7 @@
     width: 100%;
     max-height: 100px;
     margin-right: 0.5rem;
-    transition:  450ms;
+    transition:transform 450ms;
 }
 
 .row_poster:hover{

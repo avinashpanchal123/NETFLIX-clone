@@ -1,5 +1,6 @@
 import React from 'react'
 import Row from './components/Row'
+import Banner from './components/Banner'
 import requests from './request'
 import "./App.css"
 
@@ -16,6 +17,8 @@ function app() {
 
   return (
     <>
+    <div className='app'>
+    <Banner/>
     <Row
      title = "NETFLIX ORIGINALS"
       fetchURL={fetchNetflixOriginals}
@@ -28,6 +31,7 @@ function app() {
     <Row title = "Horror Movies" fetchURL={fetchHorrorMovies} />
     <Row title = "Romance Movies" fetchURL={fetchRomanceMovies} />
     <Row title = "Documentaries" fetchURL={fetchDocumentaries} />
+    </div>
     </>
   )
 }
