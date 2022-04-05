@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
-import axios from "../axios"
-import requests from '../request';
-import "./styles/Banner.css"
+import axios from "../../axios"
+import requests from '../../request';
+import "../styles/Banner.css"
 
 
 const base_url = "https://image.tmdb.org/t/p/original/";

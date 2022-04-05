@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "../axios.js";
-import "./styles/Row.css"
+import axios from "../../axios";
+import "../styles/Row.css"
 
 
 
