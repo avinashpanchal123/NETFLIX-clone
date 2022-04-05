@@ -11,9 +11,9 @@
     width: 33%;
     height: 20rem;
     position: fixed;
-    top: 5rem;
+    top: 10rem;
     left: 34%;
-    background-color: antiquewhite;
-    border: 2px solid black;
+    color: white;
     z-index: 1;
+    text-align: center;
 }
