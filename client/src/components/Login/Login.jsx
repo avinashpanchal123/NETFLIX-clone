@@ -27,15 +27,19 @@ const Login = () => {
         'Content-Type':"application/json"
       }
     })
+
+    console.log(googleData)
     
     const data = await res.json();
     setLoginData(data)
    
     setIsAuth(true)
-  
-      navigate("/dash-board")
+
+
+    localStorage.setItem("loginData", JSON.stringify(data));
     
-    localStorage.setItem("loginData", JSON.stringify(data))
+
+    navigate("/dash-board")
   };
 
   const handleFailure = (res) => {
@@ -46,6 +50,7 @@ const Login = () => {
   const handleLogOut = () => {
     alert("You have signed out successfully");
     localStorage.removeItem("loginData");
+    setIsAuth(false)
     setLoginData(null)
   };
 

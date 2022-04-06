@@ -2,7 +2,8 @@ import React from 'react'
 import { Avatar } from '@mui/material';
 import "../styles/Navbar.css"
 
- const Navbar  = ()=> {
+ const Navbar  = ({userData})=> {
+  //  console.log(userData)
   return (
     <>
     <div className="nav">
@@ -11,9 +12,8 @@ import "../styles/Navbar.css"
          src="https://i.ibb.co/dgVdHZ4/netflix-logo.webp"
          alt="Netflix" />
       
-      <Avatar
-      className='nav_avatar'
-       sx={{ color:"red"}}>N</Avatar>
+      <Avatar className='nav_avatar'
+       alt="Remy Sharp" src={userData.picture}/>
     </div>
     </>
   )

@@ -24,6 +24,9 @@ const Banner = ()=> {
         return str?.length > n ? str.substr(0, n-1) + "...":str
     }
 
+    const playTrailer= ()=>{
+        
+    }
 
   return (
     <>
@@ -37,7 +40,7 @@ const Banner = ()=> {
         <div className="banner_contents">
             <h1 className='banner_title'>{banner?.title || banner?.name || banner?.original_name}</h1>
             <div className="banner_btns">
-                <button className="banner_btn">Play</button>
+                <button onClick={playTrailer} className="banner_btn">Play</button>
                 <button className="banner_btn">My List</button>
             </div>
             <h1 className="banner_discription">

@@ -9,10 +9,13 @@ import "../../App.css"
 
 function DashBoard() {
   let {isAuth} = useContext(AuthContext);
+  let userData = JSON.parse(localStorage.getItem("loginData"));;
+  // console.log(isAuth)
   const navigate = useNavigate();
-
   const navigateEffect = useEffect(()=>{
-    if( !isAuth) {
+    if( userData === null) {
+      console.log("user is not authenticated")
+      
       navigate("/")
     }
   
@@ -31,9 +34,9 @@ function DashBoard() {
   return  (
     <>
      {
-       isAuth &&
+       userData &&
        <div className='app'>
-       <Navbar />
+       <Navbar userData ={userData}/>
      <Banner/>
      <Row
       title = "NETFLIX ORIGINALS"
