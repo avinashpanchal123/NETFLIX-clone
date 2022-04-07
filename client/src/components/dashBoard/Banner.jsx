@@ -2,16 +2,18 @@ import React,{useState, useEffect} from 'react'
 import axios from "../../axios"
 import requests from '../../request';
 import "../styles/Banner.css"
-
+import YouTube from 'react-youtube';
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 const Banner = ()=> {
-    const [banner, setBanner] = useState([]);
+    const [banner, setBanner] = useState("");
+    const [trailer, setTrailer] = useState(false);
+    const [showTrailer, setShowTrailer] = useState(false)
 
     useEffect(()=>{
         const getData = async()=>{
-            const request = await axios.get(requests.fetchNetflixOriginals);
+            const request = await axios.get(requests.fetchTopRated);
             const data =  await request.data.results;
             let random = Math.floor(Math.random() * (data.length-1))
             setBanner(data[random])
@@ -24,8 +26,21 @@ const Banner = ()=> {
         return str?.length > n ? str.substr(0, n-1) + "...":str
     }
 
-    const playTrailer= ()=>{
-        
+    const playTrailer= async()=>{
+        const request = await axios.get(`movie/${banner?.id}?api_key=d8d01a05f86a4da428034a687a0beea4&append_to_response=videos`);
+        const data = await request.data.videos;
+        let movieTrailer = data?.results[0].key
+        setTrailer(movieTrailer)
+        setShowTrailer(!showTrailer)
+    }
+
+    const opts = {
+        height: '390',
+        width: '100%',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 1,
+        }
     }
 
   return (
@@ -51,6 +66,11 @@ const Banner = ()=> {
 
         </div>
     </header>
+      {
+          showTrailer &&
+          <YouTube videoId={trailer} opts={opts}  />
+      }
+      
     </>
   )
 }
