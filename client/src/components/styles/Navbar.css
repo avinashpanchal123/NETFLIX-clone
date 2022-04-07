@@ -56,4 +56,5 @@
     background-color: #0e0d0d;
     color: white;
     border-bottom: 0.2rem solid red;
+    overflow-y: scroll;
 }

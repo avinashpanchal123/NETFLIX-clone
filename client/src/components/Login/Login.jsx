@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../styles/Login.css";
-import Navbar from "../dashBoard/Navbar";
+import Navbar from "../dashBoard/navbar/Navbar";
 import AuthContext from "../context/AuthContext"
 import {useNavigate} from "react-router-dom"
 import { GoogleLogin, GoogleLogout } from "react-google-login";

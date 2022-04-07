@@ -3,7 +3,7 @@ import AuthContext from '../context/AuthContext'
 import {useNavigate} from "react-router-dom"
 import Row from './Row'
 import Banner from './Banner'
-import Navbar from './Navbar'
+import Navbar from './navbar/Navbar'
 import requests from '../../request'
 import "../../App.css"
 
