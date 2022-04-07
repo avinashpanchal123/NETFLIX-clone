@@ -58,3 +58,8 @@
     border-bottom: 0.2rem solid red;
     overflow-y: scroll;
 }
+
+.query_results{
+    cursor: pointer;
+    margin-bottom: 0.2rem;
+}

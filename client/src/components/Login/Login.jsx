@@ -49,6 +49,7 @@ const Login = () => {
   const handleLogOut = () => {
     alert("You have signed out successfully");
     localStorage.removeItem("loginData");
+    localStorage.removeItem("movieId");
     setIsAuth(false)
     setLoginData(null)
   };
@@ -61,14 +62,14 @@ const Login = () => {
          {
             loginData?
             (<>
-            <h3>You are Logged in as {loginData.email}</h3>
+            <h3 className="bottom_margin">You are Logged in as {loginData.email}</h3>
             <div>
-              <button onClick={handleLogOut}>Log Out</button>
+              <button className="log_out_btn" onClick={handleLogOut}>Log Out</button>
             </div>
             </>):
             (<>
-            <h1>Unlimited Movies, TV Shows and More</h1>
-            <h3>Watch anywhere Cancle anytime</h3>
+            <h1 className="bottom_margin">Unlimited Movies, TV Shows and More</h1>
+            <h3 className="bottom_margin">Watch anywhere Cancle anytime</h3>
               <div>
             <GoogleLogin
             clientId={clientId}

@@ -1,8 +1,11 @@
 import React from "react";
+import {useNavigate} from "react-router-dom"
 
 const MovieList = ({ movie }) => {
   console.log(movie);
   let { id, title } = movie;
+
+  const navigate = useNavigate();
 
   const gotoDetailsPage = ()=>{
       let movieId = JSON.parse(localStorage.getItem("movieId"));
@@ -13,10 +16,11 @@ const MovieList = ({ movie }) => {
          localStorage.removeItem("movieId");
          localStorage.setItem("movieId", JSON.stringify(id))
       }
+      navigate("/movie-details")
   }
   return (
     <>
-    <p onClick={gotoDetailsPage}>{title}</p>
+    <p  className='small_margin query_results' onClick={gotoDetailsPage}>{title}</p>
     </>
   );
 };

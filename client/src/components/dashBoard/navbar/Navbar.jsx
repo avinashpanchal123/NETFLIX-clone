@@ -62,7 +62,7 @@ import debounce from "lodash.debounce"
     <div onClick={showResultsHandler} className="nav">
         <img
         className='nav_logo'
-         src="https://i.ibb.co/dgVdHZ4/netflix-logo.webp"
+        src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
          alt="Netflix" />
 
         
