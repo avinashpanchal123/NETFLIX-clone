@@ -40,6 +40,7 @@ const Banner = ()=> {
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
+          origin: 'http://localhost:3000' 
         }
     }
 
