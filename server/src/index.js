@@ -29,6 +29,10 @@ const upsert = (arr, item)=>{
 }
 
 
+app.get("/", (req, res)=>{
+    res.send("hello server is started")
+})
+
 app.post("/api/google-login", async(req, res)=>{
     const {token} = await req.body; 
     const ticket = await client.verifyIdToken({
