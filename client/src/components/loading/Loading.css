@@ -1,0 +1,14 @@
+
+
+.loading_container{
+    width: 20rem;
+    height: 20rem;
+    border: 2px solid black;
+    color: black;
+    
+}
+
+.loading_svg{
+    color: black;
+    background-color: red;
+}

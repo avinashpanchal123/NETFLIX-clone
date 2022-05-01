@@ -17,10 +17,12 @@ function DashBoard() {
       console.log("user is not authenticated")
       
       navigate("/")
+      
     }
   
   }, [])
 
+  console.log(isAuth);
   let {fetchTrending,
     fetchTopRated,
     fetchActionMovies,
