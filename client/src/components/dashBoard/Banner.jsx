@@ -18,6 +18,7 @@ const Banner = ()=> {
             let random = Math.floor(Math.random() * (data.length-1))
             setBanner(data[random])
            console.log(data[random])
+        //    console.log(current_local_user);
         }
         getData()
     }, [])

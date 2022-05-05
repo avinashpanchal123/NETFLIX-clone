@@ -17,3 +17,7 @@
 .small_margin{
     margin-bottom: 0.2rem;
 }
+
+.btn{
+    border: none;
+}

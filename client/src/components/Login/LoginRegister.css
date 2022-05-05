@@ -1,0 +1,98 @@
+
+
+.basic_modal{
+    width: 100%;
+    height: 100vh;
+}
+
+.modal_box{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 30rem;
+    padding: 3rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 24;
+    padding: 4;
+    border: none;
+}
+
+.modal_x{
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 2px;
+}
+
+
+
+.login_input_div{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.login_input{
+    width: 100%;
+    outline: none;
+    padding: 0.7rem;
+    border: none;
+    border-bottom: 0.01rem solid #757575;
+    letter-spacing: 0.01rem;
+}
+.login_btn{
+    border: 1px solid #FB760B;
+    width: 30%;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: #FB760B;
+   
+}
+.login_container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.grid_item{
+    padding: 0% 10%;
+}
+
+
+.login_options{
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+    height: 10%;
+}
+.login_options div{
+    font-size: 1.2rem;
+    /* color: #757575; */
+    height: 70%;
+    cursor: pointer;
+    /* font-weight: bold; */
+}
+
+.is_active{
+    border-bottom: 0.17rem solid #24A3B5;
+    color: #24A3B5;
+}
+.close_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+
+.Register_btn{
+    width: 50%;
+    border-radius: 0.2rem;
+    min-height: 3rem;
+    background-image: -webkit-linear-gradient(0deg,#ff934b 0%,#ff5e62 100%);
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    letter-spacing: 0.01rem;
+    font-weight: bold;
+
+}

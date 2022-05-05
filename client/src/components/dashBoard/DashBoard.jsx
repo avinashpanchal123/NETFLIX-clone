@@ -7,19 +7,21 @@ import Navbar from './navbar/Navbar'
 import requests from '../../request'
 import "../../App.css"
 
+
+
 function DashBoard() {
   let {isAuth} = useContext(AuthContext);
-  let userData = JSON.parse(localStorage.getItem("loginData"));;
-  // console.log(isAuth)
+
+
+
+  // console.log(current_local_user);
   const navigate = useNavigate();
-  const navigateEffect = useEffect(()=>{
-    if( userData === null) {
-      console.log("user is not authenticated")
-      
+  const navigateEffect = useEffect(()=>{ 
+    let current_local_user = JSON.parse(localStorage.getItem("current_user"));
+    console.log(current_local_user);
+    if( current_local_user === null)  {
       navigate("/")
-      
     }
-  
   }, [])
 
   console.log(isAuth);
@@ -35,9 +37,8 @@ function DashBoard() {
   return  (
     <>
      {
-       userData &&
        <div className='app'>
-       <Navbar userData ={userData}/>
+       <Navbar/>
      <div>
      <Banner/>
      <Row

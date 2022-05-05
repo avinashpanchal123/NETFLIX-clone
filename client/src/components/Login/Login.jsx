@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import "../styles/Login.css";
 import Navbar from "../dashBoard/navbar/Navbar";
 import AuthContext from "../context/AuthContext"
-import {useNavigate} from "react-router-dom"
-import { GoogleLogin, GoogleLogout } from "react-google-login";
+import {Link, useNavigate} from "react-router-dom"
+
 
 const Login = () => {
   const {isAuth, setIsAuth} = useContext(AuthContext);
@@ -57,6 +57,7 @@ const Login = () => {
   return (
     <>
       <div className="main_container">
+       
      
          <div className="modal">
          {
@@ -71,12 +72,9 @@ const Login = () => {
             <h1 className="bottom_margin">Unlimited Movies, TV Shows and More</h1>
             <h3 className="bottom_margin">Watch anywhere Cancle anytime</h3>
               <div>
-            <GoogleLogin
-            clientId={clientId}
-            buttonText="Login With Google"
-            onSuccess={handleLogin}
-            onFailure={handleFailure}
-            cookiePolicy={"single_host_origin"} />
+               <Link to="/login-register">
+               <button className="btn login_redirect_btn">Finish Sign Up </button>
+               </Link>
             </div>
             </>
             )

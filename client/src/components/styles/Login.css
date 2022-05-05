@@ -24,3 +24,14 @@
     z-index: 1;
     text-align: center;
 }
+
+.login_redirect_btn{
+   min-width: 12rem;
+    min-height: 3rem;
+    font-size: 1.625rem;
+    background-color: #e50914;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+

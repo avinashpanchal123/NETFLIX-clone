@@ -13,7 +13,7 @@
 .nav_logo{
     width: 6rem;
     object-fit: contain;
-    
+    margin-top: 1rem;
 }
 
 #nav_search{
@@ -34,6 +34,17 @@
     position: fixed;
     right: 1rem;
     top: 0.5rem;
+    color: #0e0d0d;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    color: #e50914;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* display: inline-flex; */
+    padding-top: 0.25rem;
     /* width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%; */
@@ -56,9 +67,13 @@
     background-color: #0e0d0d;
     color: white;
     border-bottom: 0.2rem solid red;
-    overflow-y: scroll;
+    overflow: scroll;
+    /* overflow-y: scroll; */
 }
 
+.results_div::-webkit-scrollbar{
+    display: none;
+}
 .query_results{
     cursor: pointer;
     margin-bottom: 0.2rem;

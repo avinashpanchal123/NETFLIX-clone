@@ -17,13 +17,11 @@ const register = async(req, res)=>{
         }).lean().exec();
 
         if( user){
-          return  res.status(400).json({
-                status : "failed",
-                message : " User already exist"
-            })
+          return  res.status(400).json("User already Exist")
         }
         else{
             user = await User.create(req.body);
+            console.log(user);
         
             const token = newToken(user)
     
