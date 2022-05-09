@@ -5,7 +5,7 @@ import { API_KEY } from "../../../request";
 import axios from "../../../axios";
 import "../../styles/Navbar.css";
 import debounce from "lodash.debounce";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   //  console.log(userData)
@@ -13,6 +13,8 @@ const Navbar = () => {
   const [avatar, setAvatar] = useState("");
   const [showResults, setShowResults] = useState(false);
   const [movieList, setMovieList] = useState([]);
+  const [signInOutModal, setSignInOutModal] =  useState(false)
+
 
   const searchMovies = (e) => {
     // let timer;
@@ -29,6 +31,8 @@ const Navbar = () => {
     // setShowResults(true)
     // console.log(query)
   };
+
+  let navigate = useNavigate()
 
   useEffect(()=>{
     let current_local_user = JSON.parse(localStorage.getItem("current_user"));
@@ -62,6 +66,15 @@ const Navbar = () => {
     setQuery("");
   };
 
+  const handleModal = (value)=>{
+    if( avatar){
+      console.log("I am called");
+     localStorage.removeItem("current_user");
+     navigate("/login-register")
+    }
+   
+  }
+
   const debouncedChangeHandler = useCallback(debounce(changeHandler, 3000), []);
 
   return (
@@ -86,8 +99,34 @@ const Navbar = () => {
         {/* <Avatar className='nav_avatar'
        alt="Remy Sharp" src=""/> */}
 
-        <div className="nav_avatar">{avatar}</div>
+        <div className="nav_avatar"
+           onMouseEnter={() => setSignInOutModal(true)} 
+           onMouseLeave={() => setSignInOutModal(false)}
+        >{avatar}</div>
       </div>
+
+      {
+     signInOutModal &&
+     <div
+     onMouseEnter={() => setSignInOutModal(true)} 
+     onMouseLeave={() => setSignInOutModal(false)}
+     className="signIn_out_modal">
+        <div className="signInOutDiv login_register" onClick={()=>avatar?
+        handleModal(false):handleModal(true)
+        }>
+          {
+            avatar ?
+            "Sign Out":
+            "Login/Register"
+          }
+        </div>
+        <div className="signInOutDiv order_items">
+        &nbsp;  <span>
+          </span>  &nbsp; 
+          My List
+        </div>
+    </div>
+   }
       {showResults && (
         <div className="results_div">
           {movieList.map((movie) => {
