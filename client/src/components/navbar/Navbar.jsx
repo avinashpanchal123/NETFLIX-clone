@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from "react";
 import MovieList from "./MovieList";
 import { Avatar } from "@mui/material";
-import { API_KEY } from "../../../request";
-import axios from "../../../axios";
-import "../../styles/Navbar.css";
+import { API_KEY } from "../../request";
+import axios from "../../axios";
+import "../styles/Navbar.css"
 import debounce from "lodash.debounce";
 import { Link, useNavigate } from "react-router-dom";
 

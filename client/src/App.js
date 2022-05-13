@@ -1,7 +1,7 @@
 import React from "react";
 import DashBoard from "./components/dashBoard/DashBoard";
 import Login from "./components/Login/Login";
-import MovieDetails from "./components/dashBoard/details/MovieDetails";
+import MovieDetails from "./components/movieDetails/MovieDetails";
 import Loading from "./components/loading/Loading";
 import LoginRegister from "./components/Login/LoginRegister"
 import { Routes, Route, Router } from "react-router-dom";

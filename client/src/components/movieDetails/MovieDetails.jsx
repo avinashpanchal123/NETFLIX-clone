@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../../../axios";
-import "../../styles/MovieDetails.css";
+import axios from "../../axios";
+import "../styles/MovieDetails.css";
 import YouTube from "react-youtube";
 // import {uuid} from "uuid"
 
@@ -52,6 +52,11 @@ const MovieDetails = () => {
     else{ setShowTrailer(true)}
  }
 
+
+ function addToList(){
+   console.log(movieDetails);
+ }
+
  const opts = {
     height: "390",
     width: "100%",
@@ -83,6 +88,9 @@ const MovieDetails = () => {
 
                 })
             } */}
+            <div>
+              <button onClick={addToList}>Add to List</button>
+            </div>
           </div>
         </div>
       ) : null}
